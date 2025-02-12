@@ -5,7 +5,8 @@
     "description": "Design user-friendly and visually appealing interfaces for web and mobile applications.",
     "open_position": 3,
     "image": "https://example.com/images/ux_ui_designer.jpg",
-    "sector": "design"
+    "sector": "design",
+    "salary": "$60,000 - $90,000"
   },
   {
     "_id": "2",
@@ -13,7 +14,8 @@
     "description": "Develop and maintain responsive websites using modern web technologies.",
     "open_position": 5,
     "image": "https://example.com/images/web_developer.jpg",
-    "sector": "technology"
+    "sector": "technology",
+    "salary": "$55,000 - $85,000"
   },
   {
     "_id": "3",
@@ -21,7 +23,8 @@
     "description": "Build full-stack applications using MongoDB, Express.js, React, and Node.js.",
     "open_position": 4,
     "image": "https://example.com/images/mern_stack_dev.jpg",
-    "sector": "technology"
+    "sector": "technology",
+    "salary": "$70,000 - $110,000"
   },
   {
     "_id": "4",
@@ -29,7 +32,8 @@
     "description": "Create compelling and engaging content for blogs, websites, and marketing materials.",
     "open_position": 2,
     "image": "https://example.com/images/content_writer.jpg",
-    "sector": "media"
+    "sector": "media",
+    "salary": "$45,000 - $70,000"
   },
   {
     "_id": "5",
@@ -37,7 +41,8 @@
     "description": "Analyze and interpret complex data sets to provide business insights.",
     "open_position": 3,
     "image": "https://example.com/images/data_analyst.jpg",
-    "sector": "data"
+    "sector": "data",
+    "salary": "$65,000 - $100,000"
   },
   {
     "_id": "6",
@@ -45,7 +50,8 @@
     "description": "Plan, execute, and oversee projects to ensure timely and successful delivery.",
     "open_position": 2,
     "image": "https://example.com/images/project_manager.jpg",
-    "sector": "management"
+    "sector": "management",
+    "salary": "$80,000 - $120,000"
   },
   {
     "_id": "7",
@@ -53,7 +59,8 @@
     "description": "Capture high-quality images for various purposes including events and marketing.",
     "open_position": 3,
     "image": "https://example.com/images/photographer.jpg",
-    "sector": "media"
+    "sector": "media",
+    "salary": "$40,000 - $65,000"
   },
   {
     "_id": "8",
@@ -61,7 +68,8 @@
     "description": "Develop and implement marketing strategies to promote products and services.",
     "open_position": 4,
     "image": "https://example.com/images/marketing_specialist.jpg",
-    "sector": "marketing"
+    "sector": "marketing",
+    "salary": "$55,000 - $90,000"
   },
   {
     "_id": "9",
@@ -69,7 +77,8 @@
     "description": "Protect company systems and networks from security threats and vulnerabilities.",
     "open_position": 3,
     "image": "https://example.com/images/cybersecurity_analyst.jpg",
-    "sector": "security"
+    "sector": "security",
+    "salary": "$75,000 - $115,000"
   },
   {
     "_id": "10",
@@ -77,7 +86,8 @@
     "description": "Develop, test, and maintain software applications to meet business needs.",
     "open_position": 5,
     "image": "https://example.com/images/software_engineer.jpg",
-    "sector": "technology"
+    "sector": "technology",
+    "salary": "$80,000 - $130,000"
   },
   {
     "_id": "11",
@@ -85,7 +95,8 @@
     "description": "Create visually appealing graphics for branding, advertising, and digital content.",
     "open_position": 3,
     "image": "https://example.com/images/graphic_designer.jpg",
-    "sector": "design"
+    "sector": "design",
+    "salary": "$50,000 - $80,000"
   },
   {
     "_id": "12",
@@ -93,7 +104,8 @@
     "description": "Oversee hiring, employee relations, and organizational development strategies.",
     "open_position": 2,
     "image": "https://example.com/images/hr_manager.jpg",
-    "sector": "management"
+    "sector": "management",
+    "salary": "$70,000 - $110,000"
   },
   {
     "_id": "13",
@@ -101,7 +113,8 @@
     "description": "Manage financial records, prepare reports, and ensure compliance with regulations.",
     "open_position": 3,
     "image": "https://example.com/images/accountant.jpg",
-    "sector": "commerce"
+    "sector": "commerce",
+    "salary": "$55,000 - $85,000"
   },
   {
     "_id": "14",
@@ -109,7 +122,8 @@
     "description": "Lead sales teams, develop strategies, and drive business growth.",
     "open_position": 4,
     "image": "https://example.com/images/sales_manager.jpg",
-    "sector": "commerce"
+    "sector": "commerce",
+    "salary": "$75,000 - $120,000"
   },
   {
     "_id": "15",
@@ -117,7 +131,8 @@
     "description": "Provide legal guidance, ensure compliance, and handle legal disputes.",
     "open_position": 2,
     "image": "https://example.com/images/legal_advisor.jpg",
-    "sector": "law"
+    "sector": "law",
+    "salary": "$90,000 - $150,000"
   },
   {
     "_id": "16",
@@ -125,7 +140,8 @@
     "description": "Design, develop, and test mechanical systems and machinery.",
     "open_position": 3,
     "image": "https://example.com/images/mechanical_engineer.jpg",
-    "sector": "engineering"
+    "sector": "engineering",
+    "salary": "$70,000 - $110,000"
   },
   {
     "_id": "17",
@@ -133,7 +149,8 @@
     "description": "Analyze financial data to assist in investment and business decisions.",
     "open_position": 4,
     "image": "https://example.com/images/financial_analyst.jpg",
-    "sector": "finance"
+    "sector": "finance",
+    "salary": "$65,000 - $105,000"
   },
   {
     "_id": "18",
@@ -141,7 +158,8 @@
     "description": "Organize and coordinate corporate and social events.",
     "open_position": 2,
     "image": "https://example.com/images/event_planner.jpg",
-    "sector": "hospitality"
+    "sector": "hospitality",
+    "salary": "$50,000 - $75,000"
   },
   {
     "_id": "19",
@@ -149,7 +167,8 @@
     "description": "Conduct research and laboratory tests to advance medical knowledge.",
     "open_position": 3,
     "image": "https://example.com/images/biomedical_scientist.jpg",
-    "sector": "healthcare"
+    "sector": "healthcare",
+    "salary": "$70,000 - $115,000"
   },
   {
     "_id": "20",
@@ -157,6 +176,7 @@
     "description": "Oversee logistics and operations to ensure efficient supply chain management.",
     "open_position": 3,
     "image": "https://example.com/images/supply_chain_manager.jpg",
-    "sector": "logistics"
+    "sector": "logistics",
+    "salary": "$75,000 - $120,000"
   }
 ]

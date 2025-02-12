@@ -3,8 +3,8 @@ import logo from "../../assets/logo2.png"
 const Navbar = () => {
     const navlinks = <>
         <li><Link to={'/'}>Home</Link></li>
-        <li><Link to='/aboutus'>About Us</Link></li>
-        <li><Link to={'/jobs'}>Jobs</Link></li>
+        <li><Link to='/getsupport'>Get Support</Link></li>
+        <li><Link to={'/alljobs'}>Jobs</Link></li>
         <li><Link to={'/blogs'}>Blogs</Link></li>
     </>
     return (

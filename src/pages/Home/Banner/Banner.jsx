@@ -8,18 +8,18 @@ import linkedin from "../../../assets/CompanyLogo/LinkedIN.png"
 const Banner = () => {
     return (
         <div>
-            <div className="lg:flex justify-center items-center bg-[#e9f0ff]">
+            <div className="lg:flex justify-evenly items-center bg-[#e9f0ff]">
                 <div className="my-8 ml-2 mr-2">
                     <p className="lg:text-6xl  text-4xl font-semibold">Fine Your <br /> Dream <button className="bg-blue-600 lg:text-5xl text-3xl px-5 py-2 text-white rounded-lg">JOBS</button><br /> Platform</p>
                     <p className="lg:text-4xl text-3xl mt-4 ">Your Dream Job is Waiting for You</p>
                 </div>
-                <div className="w-[400px]">
+                <div className="w-[500px]">
                     <img src={bannerImg} alt="" />
                 </div>
 
             </div>
             <div>
-                <div className="mx-auto max-w-5xl">
+                <div className="mx-auto max-w-6xl">
                     <Marquee>
                         <img className="w-36 md:m-6 m-3" src={google} alt="img" />
                         <img className="w-36 md:m-6 m-3" src={linkedin} alt="img" />
