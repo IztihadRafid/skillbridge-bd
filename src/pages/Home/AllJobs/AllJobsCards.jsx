@@ -1,5 +1,6 @@
+import React from 'react';
 
-const JobItem = ({ job }) => {
+const AllJobsCards = ({ job }) => {
     const { _id, title, description, open_position, image, sector, salary } = job
     return (
         <div>
@@ -8,12 +9,15 @@ const JobItem = ({ job }) => {
 
                     <img src="" alt="" />
                     <h2 className="card-title text-2xl">{title}</h2>
+                    {/* <p className="text-lg font-bold">Open Seat: <span className="mx-4">{open_position}</span></p> */}
+
                     <p className="text-lg font-bold">Salary: <span className="mx-4">{salary} <span className="text-pink-600">(Negotiable)</span></span></p>
                     <button className='btn-block bg-purple-500 py-2 rounded-xl'>Apply</button>
                 </div>
             </div>
         </div>
+
     );
 };
 
-export default JobItem;
+export default AllJobsCards;

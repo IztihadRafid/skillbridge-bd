@@ -1,182 +1,92 @@
 [
   {
-    "_id": "1",
     "title": "UX/UI Designer",
     "description": "Design user-friendly and visually appealing interfaces for web and mobile applications.",
     "open_position": 3,
     "image": "https://example.com/images/ux_ui_designer.jpg",
     "sector": "design",
-    "salary": "$60,000 - $90,000"
+    "salary": "$60,000 - $90,000",
+    "jobtype": ["Remote", "Part time", "Fulltime"]
   },
   {
-    "_id": "2",
     "title": "Web Developer",
     "description": "Develop and maintain responsive websites using modern web technologies.",
     "open_position": 5,
     "image": "https://example.com/images/web_developer.jpg",
     "sector": "technology",
-    "salary": "$55,000 - $85,000"
+    "salary": "$55,000 - $85,000",
+    "jobtype": ["Remote", "Part time", "Fulltime"]
   },
   {
-    "_id": "3",
     "title": "MERN Stack Developer",
     "description": "Build full-stack applications using MongoDB, Express.js, React, and Node.js.",
     "open_position": 4,
     "image": "https://example.com/images/mern_stack_dev.jpg",
     "sector": "technology",
-    "salary": "$70,000 - $110,000"
+    "salary": "$70,000 - $110,000",
+    "jobtype": ["Remote", "Part time", "Fulltime"]
   },
   {
-    "_id": "4",
     "title": "Content Writer",
     "description": "Create compelling and engaging content for blogs, websites, and marketing materials.",
     "open_position": 2,
     "image": "https://example.com/images/content_writer.jpg",
     "sector": "media",
-    "salary": "$45,000 - $70,000"
+    "salary": "$45,000 - $70,000",
+    "jobtype": ["Remote", "Part time", "Fulltime"]
   },
   {
-    "_id": "5",
     "title": "Data Analyst",
     "description": "Analyze and interpret complex data sets to provide business insights.",
     "open_position": 3,
     "image": "https://example.com/images/data_analyst.jpg",
     "sector": "data",
-    "salary": "$65,000 - $100,000"
+    "salary": "$65,000 - $100,000",
+    "jobtype": ["Remote", "Part time", "Fulltime"]
   },
   {
-    "_id": "6",
     "title": "Project Manager",
     "description": "Plan, execute, and oversee projects to ensure timely and successful delivery.",
     "open_position": 2,
     "image": "https://example.com/images/project_manager.jpg",
     "sector": "management",
-    "salary": "$80,000 - $120,000"
+    "salary": "$80,000 - $120,000",
+    "jobtype": ["Remote", "Part time", "Fulltime"]
   },
   {
-    "_id": "7",
     "title": "Photographer",
     "description": "Capture high-quality images for various purposes including events and marketing.",
     "open_position": 3,
     "image": "https://example.com/images/photographer.jpg",
     "sector": "media",
-    "salary": "$40,000 - $65,000"
+    "salary": "$40,000 - $65,000",
+    "jobtype": ["Remote", "Part time", "Fulltime"]
   },
   {
-    "_id": "8",
     "title": "Marketing Specialist",
     "description": "Develop and implement marketing strategies to promote products and services.",
     "open_position": 4,
     "image": "https://example.com/images/marketing_specialist.jpg",
     "sector": "marketing",
-    "salary": "$55,000 - $90,000"
+    "salary": "$55,000 - $90,000",
+    "jobtype": ["Remote", "Part time", "Fulltime"]
   },
   {
-    "_id": "9",
     "title": "Cybersecurity Analyst",
     "description": "Protect company systems and networks from security threats and vulnerabilities.",
     "open_position": 3,
     "image": "https://example.com/images/cybersecurity_analyst.jpg",
     "sector": "security",
-    "salary": "$75,000 - $115,000"
+    "salary": "$75,000 - $115,000",
+    "jobtype": ["Remote", "Part time", "Fulltime"]
   },
   {
-    "_id": "10",
     "title": "Software Engineer",
     "description": "Develop, test, and maintain software applications to meet business needs.",
     "open_position": 5,
     "image": "https://example.com/images/software_engineer.jpg",
     "sector": "technology",
-    "salary": "$80,000 - $130,000"
-  },
-  {
-    "_id": "11",
-    "title": "Graphic Designer",
-    "description": "Create visually appealing graphics for branding, advertising, and digital content.",
-    "open_position": 3,
-    "image": "https://example.com/images/graphic_designer.jpg",
-    "sector": "design",
-    "salary": "$50,000 - $80,000"
-  },
-  {
-    "_id": "12",
-    "title": "Human Resources Manager",
-    "description": "Oversee hiring, employee relations, and organizational development strategies.",
-    "open_position": 2,
-    "image": "https://example.com/images/hr_manager.jpg",
-    "sector": "management",
-    "salary": "$70,000 - $110,000"
-  },
-  {
-    "_id": "13",
-    "title": "Accountant",
-    "description": "Manage financial records, prepare reports, and ensure compliance with regulations.",
-    "open_position": 3,
-    "image": "https://example.com/images/accountant.jpg",
-    "sector": "commerce",
-    "salary": "$55,000 - $85,000"
-  },
-  {
-    "_id": "14",
-    "title": "Sales Manager",
-    "description": "Lead sales teams, develop strategies, and drive business growth.",
-    "open_position": 4,
-    "image": "https://example.com/images/sales_manager.jpg",
-    "sector": "commerce",
-    "salary": "$75,000 - $120,000"
-  },
-  {
-    "_id": "15",
-    "title": "Legal Advisor",
-    "description": "Provide legal guidance, ensure compliance, and handle legal disputes.",
-    "open_position": 2,
-    "image": "https://example.com/images/legal_advisor.jpg",
-    "sector": "law",
-    "salary": "$90,000 - $150,000"
-  },
-  {
-    "_id": "16",
-    "title": "Mechanical Engineer",
-    "description": "Design, develop, and test mechanical systems and machinery.",
-    "open_position": 3,
-    "image": "https://example.com/images/mechanical_engineer.jpg",
-    "sector": "engineering",
-    "salary": "$70,000 - $110,000"
-  },
-  {
-    "_id": "17",
-    "title": "Financial Analyst",
-    "description": "Analyze financial data to assist in investment and business decisions.",
-    "open_position": 4,
-    "image": "https://example.com/images/financial_analyst.jpg",
-    "sector": "finance",
-    "salary": "$65,000 - $105,000"
-  },
-  {
-    "_id": "18",
-    "title": "Event Planner",
-    "description": "Organize and coordinate corporate and social events.",
-    "open_position": 2,
-    "image": "https://example.com/images/event_planner.jpg",
-    "sector": "hospitality",
-    "salary": "$50,000 - $75,000"
-  },
-  {
-    "_id": "19",
-    "title": "Biomedical Scientist",
-    "description": "Conduct research and laboratory tests to advance medical knowledge.",
-    "open_position": 3,
-    "image": "https://example.com/images/biomedical_scientist.jpg",
-    "sector": "healthcare",
-    "salary": "$70,000 - $115,000"
-  },
-  {
-    "_id": "20",
-    "title": "Supply Chain Manager",
-    "description": "Oversee logistics and operations to ensure efficient supply chain management.",
-    "open_position": 3,
-    "image": "https://example.com/images/supply_chain_manager.jpg",
-    "sector": "logistics",
-    "salary": "$75,000 - $120,000"
+    "salary": "$80,000 - $130,000",
+    "jobtype": ["Remote", "Part time", "Fulltime"]
   }
 ]
