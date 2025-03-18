@@ -5,6 +5,8 @@ import AllJobs from "../pages/Home/AllJobs/AllJobs";
 import GetSupport from "../pages/GetSupport/GetSupport";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/Login/SignUp";
+import PrivateRoutes from "./PrivateRoutes";
+import Secret from "../Secret/Secret";
 
 
 export const router = createBrowserRouter([
@@ -29,8 +31,12 @@ export const router = createBrowserRouter([
           element: <Login></Login>
         },
         {
-          path: '/signUp',
+          path: 'signUp',
           element: <SignUp></SignUp>
+        },
+        {
+          path: "secret",
+          element: <PrivateRoutes><Secret></Secret></PrivateRoutes>
         }
         
       ]

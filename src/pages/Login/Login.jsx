@@ -1,13 +1,20 @@
-import {  useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import loginImg from "../../assets/jobimage/softwareenginneer.png"
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-import {AuthContext} from "../../Providers/AuthProvider"
-import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider"
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Login = () => {
-
+    const [signInError, setSignInError] = useState('')
+    const [signInSuccess, setSignInSuccess] = useState('')
     const [disabled, setDisabled] = useState(true)
-    const {signIn}=  useContext(AuthContext)
+    const { signIn } = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || "/"
+
     useEffect(() => {
         loadCaptchaEnginge(6);
     }, [])
@@ -19,11 +26,21 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        signIn(email,password)
-        .then(result=>{
-            const user = result.user;
-            console.log(user);
-        })
+        setSignInError('')
+        setSignInSuccess('')
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Signed Up successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate(from, { replace: true })
+            })
     }
     const handleValidateCaptcha = e => {
         const user_captcha_value = e.target.value;
@@ -71,6 +88,13 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
                                 {/* <button className="btn btn-primary">Login</button> */}
+                                {
+                                    // Viewing authentication error in SignUp
+                                    signInError && <p className="text-red-500 text-lg font-medium w-2/3">{signInError}</p>
+                                }
+                                {
+                                    signInSuccess && <p className="text-green-600 text-lg font-medium w-2/3">{signInSuccess}</p>
+                                }
                             </div>
                         </form>
                         <p className="text-center m-3">New Here? <Link to={'/signUp'}> <span className=" text-blue-500">Sign Up</span></Link></p>
