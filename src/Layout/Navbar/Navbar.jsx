@@ -2,14 +2,15 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo2.png"
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { FaRegFileAlt } from "react-icons/fa";
 const Navbar = () => {
 
-    const {user,logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
-    const handleLogOut = ()=>{
+    const handleLogOut = () => {
         logOut()
-        .then(()=>{ })
-        .catch(error=>console.log(error))
+            .then(() => { })
+            .catch(error => console.log(error))
     }
     const navlinks = <>
         <li><Link to={'/'}>Home</Link></li>
@@ -17,7 +18,10 @@ const Navbar = () => {
         <li><Link to={'/alljobs'}>Jobs</Link></li>
         <li><Link to={'/blogs'}>Blogs</Link></li>
         <li><Link to={'/secret'}>secret</Link></li>
-       
+        <li><Link to={'/'}><button className="flex items-center justify-center">
+            <FaRegFileAlt /> <div className="badge badge-sm badge-secondary">+0</div>
+        </button></Link></li>
+
         {
             user ? <><li><button onClick={handleLogOut} className="btn btn-ghost">logOut</button></li></> : <><li><Link to={'/login'}>Login</Link></li></>
         }
@@ -46,11 +50,11 @@ const Navbar = () => {
                         {navlinks}
                     </ul>
                 </div>
-               <img className="w-40 rounded-lg" src={logo} alt="" />
+                <img className="w-40 rounded-lg" src={logo} alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                   {navlinks}
+                    {navlinks}
                 </ul>
             </div>
             <div className="navbar-end">
