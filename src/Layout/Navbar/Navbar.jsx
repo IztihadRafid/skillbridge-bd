@@ -3,9 +3,11 @@ import logo from "../../assets/logo2.png"
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaRegFileAlt } from "react-icons/fa";
+import useCart from "../../hooks/useCart";
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext)
+    const [cart]=useCart()
 
     const handleLogOut = () => {
         logOut()
@@ -18,8 +20,8 @@ const Navbar = () => {
         <li><Link to={'/alljobs'}>Jobs</Link></li>
         <li><Link to={'/blogs'}>Blogs</Link></li>
         <li><Link to={'/secret'}>secret</Link></li>
-        <li><Link to={'/'}><button className="flex items-center justify-center">
-            <FaRegFileAlt /> <div className="badge badge-sm badge-secondary">+0</div>
+        <li><Link to={'/dashboard/cart'}><button className="flex items-center justify-center">
+            <FaRegFileAlt /> <div className="badge badge-sm badge-secondary">+{cart.length}</div>
         </button></Link></li>
 
         {

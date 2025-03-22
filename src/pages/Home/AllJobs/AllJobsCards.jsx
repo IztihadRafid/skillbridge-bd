@@ -2,37 +2,46 @@ import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useCart from "../../../hooks/useCart";
 
 
 const AllJobsCards = ({ job }) => {
-    const { _id, title, description, open_position, image, sector, salary } = job;
+    const { _id, title, description, open_position, image, sector, salary,price } = job;
     const { user } = useAuth();
     const navigate = useNavigate()
     const location = useLocation()
+    const axiosSecure = useAxiosSecure()
+    const [, refetch] = useCart()
 
 
-    const handleApplyToJob = job => {
+
+    const handleApplyToJob = () => {
         if (user && user.email) {
-            const cartItem  = {
-                jobapplyId : _id,
-                email : user.email,
+
+            //send cart apply to DATABASE
+            const cartItem = {
+                jobapplyId: _id,
+                email: user.email,
                 title,
                 description,
-                salary
+                salary,
+                price
             }
-            axios.post('http://localhost:5000/jobcarts',cartItem)
-            .then(res=>{
-                console.log(res.data);
-                if(res.data.insertedId){
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: "Applied Successfully",
-                        showConfirmButton: false,
-                        timer: 1500
-                      });
-                }
-            })
+            axiosSecure.post('/jobcarts', cartItem)
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Applied Successfully",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        refetch()
+                    }
+                })
         }
         else {
             Swal.fire({
@@ -64,7 +73,7 @@ const AllJobsCards = ({ job }) => {
                     <h2 className="card-title text-2xl">{title}</h2>
                     {/* <p className="text-lg font-bold">Open Seat: <span className="mx-4">{open_position}</span></p> */}
                     <p className="text-lg font-bold">Salary: <span className="mx-4">{salary} <span className="text-pink-600">(Negotiable)</span></span></p>
-                    <button onClick={() => handleApplyToJob(job)} className='btn-block bg-purple-500 py-2 rounded-xl'>Apply</button>
+                    <button onClick={ handleApplyToJob} className='btn-block bg-purple-500 py-2 rounded-xl'>Apply</button>
                 </div>
             </div>
         </div>
