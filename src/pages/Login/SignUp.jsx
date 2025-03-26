@@ -3,12 +3,15 @@ import loginImg from "../../assets/jobimage/softwareenginneer.png"
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../../Layout/Navbar/Components/SocialLogin/SocialLogin";
 const SignUp = () => {
     const [signInError, setSignInError] = useState('')
     const [signInSuccess, setSignInSuccess] = useState('')
-    const {createUser} = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext)
     const navigate = useNavigate();
-    const location = useLocation()
+    const location = useLocation();
+    const axiosPublic = useAxiosPublic()
 
     const from = location.state?.from?.pathname || "/"
 
@@ -20,23 +23,38 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(username, email, password);
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Signed Up successfully",
-            showConfirmButton: false,
-            timer: 1500
-          });
-          navigate(from, { replace: true })
+
 
         //reset validation
         setSignInError('')
         setSignInSuccess('')
-        createUser(email,password)
-        .then(result=>{
-            const signedUser = result.user;
-            console.log(signedUser);
-        })
+
+
+        //create  user by Firebase
+        createUser(email, password)
+            .then(result => {
+                const signedUser = result.user;
+                console.log(signedUser);
+
+                const userInfo = {
+                    name: username,
+                    email: email
+
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            Swal.fire({
+                                position: "top-end",
+                                icon: "success",
+                                title: "Signed Up successfully",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            navigate(from, { replace: true })
+                        }
+                    })
+            })
     }
 
 
@@ -72,7 +90,10 @@ const SignUp = () => {
                             </div>
 
                             <div className="form-control mt-6">
+                                <div className="flex justify-center items-center gap-3">
                                 <input className="btn btn-primary" type="submit" value="Sign Up" />
+                                <SocialLogin></SocialLogin>
+                                </div>
                                 {/* <button className="btn btn-primary">Login</button> */}
                                 {
                                     // Viewing authentication error in SignUp

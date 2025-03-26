@@ -60,7 +60,10 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                {
+                    user ? <>{user.email}</>: <><button>user</button></>
+                }
+                {/* <a className="btn">Button</a> */}
             </div>
         </div>
     );

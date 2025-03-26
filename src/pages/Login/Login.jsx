@@ -4,6 +4,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import { AuthContext } from "../../Providers/AuthProvider"
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Layout/Navbar/Components/SocialLogin/SocialLogin";
 
 const Login = () => {
     const [signInError, setSignInError] = useState('')
@@ -86,7 +87,10 @@ const Login = () => {
 
                             </div>
                             <div className="form-control mt-6">
+                                <div className="flex justify-center items-center gap-2">
                                 <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
+                                <SocialLogin></SocialLogin>
+                                </div>
                                 {/* <button className="btn btn-primary">Login</button> */}
                                 {
                                     // Viewing authentication error in SignUp
