@@ -8,6 +8,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { useContext } from "react";
 import Navbar from "../Navbar/Navbar";
 import { FaPeopleGroup } from "react-icons/fa6";
+import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
     const [cart, refetch] = useCart()
@@ -25,7 +26,7 @@ const Dashboard = () => {
     }
 
 
-    const isAdmin= true
+    const [isAdmin]= useAdmin()
 
     return (
         <div>
