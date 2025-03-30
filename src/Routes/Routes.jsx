@@ -14,6 +14,7 @@ import AllUsers from "../pages/Dashboard/Cart/AllUsers";
 import AddJobs from "../pages/Dashboard/Cart/AddJobs";
 import AdminRoutes from "./AdminRoutes";
 import ManageJobs from "../pages/Dashboard/Cart/ManageJobs";
+import UpdateJob from "../pages/Dashboard/Cart/UpdateJob/UpdateJob";
 
 
 export const router = createBrowserRouter([
@@ -68,6 +69,11 @@ export const router = createBrowserRouter([
         {
           path: 'managejobs',
           element: <AdminRoutes><ManageJobs></ManageJobs></AdminRoutes>
+        },
+        {
+          path: 'updateJob/:id',
+          element: <AdminRoutes><UpdateJob></UpdateJob></AdminRoutes>,
+          loader: ({params})=> fetch(`http://localhost:5000/jobs/${params.id}`)
         }
       ]
     }

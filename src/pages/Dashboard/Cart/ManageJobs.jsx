@@ -4,6 +4,7 @@ import { FaTrash } from 'react-icons/fa';
 import { GrUpdate } from 'react-icons/gr';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { Link } from 'react-router-dom';
 
 
 const ManageJobs = () => {
@@ -66,7 +67,8 @@ const ManageJobs = () => {
                                 <td>{job?.sector}</td>
                                 <td>{job?.salary}</td>
                                 {/* <td>{job?.jobtype}</td> */}
-                                <td><button onClick={() => handleUpdateJob(job)} className="btn bg-sky-500 hover:bg-white hover:text-sky-500 text-white btn-lg"><GrUpdate className="text-lg" /></button></td>
+                                <td><Link to={`/dashboard/updateJob/${job._id}`}><button  className="btn bg-sky-500 hover:bg-white hover:text-sky-500 text-white btn-lg"><GrUpdate className="text-lg" /></button></Link> </td>
+
                                 <td>  <button onClick={() => handleDeleteJob(job)} className="btn btn-ghost btn-lg"><FaTrash className="text-blue-500 text-lg"></FaTrash></button></td>
                             </tr>)
                         }
