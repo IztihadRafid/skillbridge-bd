@@ -13,6 +13,7 @@ import DashboardContent from "../pages/Dashboard/Cart/DashboardContent";
 import AllUsers from "../pages/Dashboard/Cart/AllUsers";
 import AddJobs from "../pages/Dashboard/Cart/AddJobs";
 import AdminRoutes from "./AdminRoutes";
+import ManageJobs from "../pages/Dashboard/Cart/ManageJobs";
 
 
 export const router = createBrowserRouter([
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
         {
           path: 'addjobs',
           element: <AdminRoutes><AddJobs></AddJobs></AdminRoutes>
+        },
+        {
+          path: 'managejobs',
+          element: <AdminRoutes><ManageJobs></ManageJobs></AdminRoutes>
         }
       ]
     }

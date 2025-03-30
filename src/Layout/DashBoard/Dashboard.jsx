@@ -9,12 +9,13 @@ import { useContext } from "react";
 import Navbar from "../Navbar/Navbar";
 import { FaPeopleGroup } from "react-icons/fa6";
 import useAdmin from "../../hooks/useAdmin";
+import useAllJobsCategory from "../../hooks/useAllJobsCategory";
 
 const Dashboard = () => {
     const [cart, refetch] = useCart()
     const { user, logOut } = useContext(AuthContext)
     const navigate = useNavigate()
-
+    const [jobs,loading] = useAllJobsCategory();
 
     // Logout button function
     const handleLogOut = () => {
@@ -44,7 +45,7 @@ const Dashboard = () => {
                         <Link to={'/dashboard/addjobs'}> <FaFile />Add Jobs</Link>
                     </li>
                     <li>
-                        <Link to={'/dashboard/managejobs'}> <IoMenu />Manage jobs</Link>
+                        <Link to={'/dashboard/managejobs'}> <IoMenu />Manage jobs <sup>{jobs.length}</sup> </Link>
                     </li>
                     <li>
                         <Link to={'/dashboard/allusers'}> <FaPeopleGroup />All Users</Link>
