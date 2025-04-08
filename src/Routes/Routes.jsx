@@ -15,6 +15,11 @@ import AddJobs from "../pages/Dashboard/Cart/AddJobs";
 import AdminRoutes from "./AdminRoutes";
 import ManageJobs from "../pages/Dashboard/Cart/ManageJobs";
 import UpdateJob from "../pages/Dashboard/Cart/UpdateJob/UpdateJob";
+import UpdateCV from "../pages/Dashboard/Cart/UpdateCV/UpdateCV";
+import Messages from "../pages/Dashboard/Cart/Messages/Messages";
+import MessageForm from "../pages/Dashboard/Cart/MessageForm/MessageForm";
+import ManageMessage from "../pages/Dashboard/Cart/Messages/ManageMessage";
+
 
 
 export const router = createBrowserRouter([
@@ -57,6 +62,15 @@ export const router = createBrowserRouter([
           path:'cart',
           element: <DashboardContent></DashboardContent>
         },
+        
+        {
+          path: 'updateCv',
+          element: <UpdateCV></UpdateCV>
+        },
+        {
+          path: 'message',
+          element:<Messages></Messages>
+        },
         // admin routes
         {
           path: 'allusers',
@@ -74,6 +88,14 @@ export const router = createBrowserRouter([
           path: 'updateJob/:id',
           element: <AdminRoutes><UpdateJob></UpdateJob></AdminRoutes>,
           loader: ({params})=> fetch(`http://localhost:5000/jobs/${params.id}`)
+        },
+        {
+          path:'messageform',
+          element: <MessageForm></MessageForm>
+        },
+        {
+          path: 'manageMessage',
+          element: <ManageMessage></ManageMessage>
         }
       ]
     }

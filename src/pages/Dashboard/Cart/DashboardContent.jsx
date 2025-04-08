@@ -4,14 +4,15 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const DashboardContent = () => {
-    const [cart,refetch] = useCart()
+    const [cart, refetch] = useCart()
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
     const axiosSecure = useAxiosSecure()
 
     // 1$ == 123TK
     const totalPriceInBDT = (totalPrice * 123.02).toFixed(2);
-
-
+    const price = 0.82
+    const priceToTk = 0.82 * 123
+    
     const handleDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -54,10 +55,10 @@ const DashboardContent = () => {
                             <th>
                                 #
                             </th>
-                            <th> Job Title</th>
+                            <th>Job Title</th>
                             <th>Description</th>
                             <th>salary</th>
-                            <th>Job Type</th>
+                            <th>Pay for Apply</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -74,7 +75,12 @@ const DashboardContent = () => {
                                     {jobItem.description}
                                 </td>
                                 <td>{jobItem.salary}</td>
-                                <td>{jobItem.jobtype}</td>
+
+                                <td>
+                                    <div className="tooltip tooltip-error text-lg" data-tip="0.82 $">
+                                        <button className="btn  btn-lg text-blue-500 text-lg">Payment</button>
+                                    </div>
+                                </td>
                                 <th>
                                     <button onClick={() => handleDelete(jobItem._id)} className="btn btn-ghost btn-lg"><FaTrash className="text-blue-500 text-lg"></FaTrash></button>
                                 </th>

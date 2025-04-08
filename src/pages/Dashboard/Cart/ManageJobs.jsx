@@ -42,11 +42,11 @@ const ManageJobs = () => {
 
     return (
         <div>
-            <h1>ManageJobs</h1>
+            <h1 className='text-center text-2xl text-blue-500 font-semibold my-4'>ManageJobs</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */}
-                    <thead>
+                    <thead className='bg-sky-300'>
                         <tr>
                             <th>#</th>
                             <th>Job Title</th>

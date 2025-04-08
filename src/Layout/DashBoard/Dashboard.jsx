@@ -10,13 +10,14 @@ import Navbar from "../Navbar/Navbar";
 import { FaPeopleGroup } from "react-icons/fa6";
 import useAdmin from "../../hooks/useAdmin";
 import useAllJobsCategory from "../../hooks/useAllJobsCategory";
+import useMessage from "../../hooks/useMessage";
 
 const Dashboard = () => {
     const [cart, refetch] = useCart()
     const { user, logOut } = useContext(AuthContext)
     const navigate = useNavigate()
     const [jobs,loading] = useAllJobsCategory();
-
+const [message] = useMessage()
     // Logout button function
     const handleLogOut = () => {
         logOut()
@@ -35,7 +36,7 @@ const Dashboard = () => {
             <div className="flex max-w-screen-2xl mx-auto ">
             {/* side bar */}
             <div className="w-64 min-h-full bg-sky-400">
-                <ul className="menu p-4 text-xl my-10">
+                <ul className="menu p-4 text-xl my-10 ">
                    {
                     isAdmin ? <>
                      <li>
@@ -50,7 +51,12 @@ const Dashboard = () => {
                     <li>
                         <Link to={'/dashboard/allusers'}> <FaPeopleGroup />All Users</Link>
                     </li>
-                    
+                    <li>
+                        <Link to={'/dashboard/messageform'}> <MdEmail />Send Message</Link>
+                    </li>
+                    <li>
+                        <Link to={'/dashboard/manageMessage'}> <MdEmail />Manage Message</Link>
+                    </li>
                     <li>
                         <button onClick={handleLogOut}> <MdLogout />LogOut</button>
                     </li></>:
@@ -65,11 +71,9 @@ const Dashboard = () => {
                         <Link to={'/dashboard/appliedjobs'}> <IoPerson />Applied Jobs <sup className="text-lg">{cart.length}</sup> </Link>
                     </li>
                     <li>
-                        <Link to={'/dashboard/emails'}> <MdEmail />Emails</Link>
+                        <Link to={'/dashboard/message'}> <MdEmail />Messages <span className="text-lg">{message.length}</span></Link>
                     </li>
-                    <li>
-                        <Link to={'/dashboard/settings'}> <IoSettingsOutline />Settings</Link>
-                    </li>
+                  
                     <li>
                         <Link to={'/dashboard/updatecv'}> <SiReaddotcv />Update CV</Link>
                     </li>
