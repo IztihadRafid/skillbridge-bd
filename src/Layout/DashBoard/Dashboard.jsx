@@ -92,7 +92,7 @@ const [message] = useMessage()
                         <Link to={'/'}> <FaHome />Home</Link>
                     </li>
                     <li>
-                        <Link to={'/blog'}> <FaBlogger />Blog</Link>
+                        <Link to={'/aboutus'}> <FaBlogger />About Us</Link>
                     </li>
                 </ul>
             </div>

@@ -18,7 +18,7 @@ const Navbar = () => {
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to='/getsupport'>Get Support</Link></li>
         <li><Link to={'/alljobs'}>Jobs</Link></li>
-        <li><Link to={'/blogs'}>Blogs</Link></li>
+        <li><Link to={'/aboutus'}>About Us</Link></li>
         {/* <li><Link to={'/secret'}>secret</Link></li> */}
         <li><Link to={'/dashboard/cart'}><button className="flex items-center justify-center">
             <FaRegFileAlt /> <div className="badge badge-sm badge-secondary">+{cart.length}</div>
