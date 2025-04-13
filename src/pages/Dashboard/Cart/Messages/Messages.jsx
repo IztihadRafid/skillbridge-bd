@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 const Messages = () => {
     const [message, refetch, loading] = useMessage()
     const latestMessageId = useRef(null);
-    console.log(message);
+    // console.log(message);
     useEffect(() => {
         const interval = setInterval(async () => {
             const newMessages = await refetch();

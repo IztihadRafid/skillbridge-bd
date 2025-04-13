@@ -5,23 +5,44 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
 import useAllUsers from "../../../hooks/useAllUsers";
 import useAppliedJobs from "../../../hooks/useAppliedJobs";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import useAllCV from "../../../hooks/useAllCV";
+import { data } from "react-router-dom";
+import useAllJobsCategory from "../../../hooks/useAllJobsCategory";
 
 const DashboardContent = () => {
+    const [appliedJobsint, setAppliedJobs] = useState([]);
+
     const [cart, refetch] = useCart()
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+    const [totalPriceInBDT, setTotalPriceInBDT] = useState((totalPrice * 123.02).toFixed(2));
     const axiosSecure = useAxiosSecure()
     const [users, loading] = useAllUsers() // all users fetching from backend
+    const { user, logOut } = useContext(AuthContext)
+    const [uploadedAllCV] = useAllCV()
+    const myCVs = uploadedAllCV?.filter(cv => cv.email === user?.email);
+    const myCVInfo = myCVs[myCVs.length - 1]// job seeker information last updated CV
+    // console.log(myCVInfo);  
+    const mycvSector = myCVs.map(myCV => myCV.sector)
+    // console.log(mycvSector);
     const [appliedJobs, isLoading] = useAppliedJobs(users?.email)
     const isApplied = appliedJobs.some(job => job.jobId === jobItem._id); // check if this job is already applied
+    const [jobs] = useAllJobsCategory()
+    const matchedJobs = jobs?.filter(job => mycvSector.includes(job.sector));
+    const matchedJobsInfo = matchedJobs[matchedJobs.length - 1]
 
+    // console.log(matchedJobsInfo);
+    const myJob = jobs?.filter(job => job.sector === user?.sector)
+    // console.log(myJob);
     // const [appliedJobs, setAppliedJobs] = useState([]);
     // 1$ == 123TK
-    const totalPriceInBDT = (totalPrice * 123.02).toFixed(2);
+    // const totalPriceInBDT = (totalPrice * 123.02).toFixed(2);
     const price = 0.82
     const priceToTk = 0.82 * 123
 
     //applied job
-    const handleApplyJob = (id) => {
+    const handleApplyJob = (id, myCVs, matchedJobs) => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -32,9 +53,11 @@ const DashboardContent = () => {
             confirmButtonText: "Apply!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosSecure.post(`/jobcarts/${id}`, { email: users?.email })
+                axiosSecure.post(`/jobcarts/${id}`, { email: user?.email, myCVInfo })
                     .then(res => {
                         refetch(); // refresh parent data
+                        setAppliedJobs(prev => [...prev, id]);
+                        setTotalPriceInBDT(prev => (parseFloat(prev) - priceToTk).toFixed(2));
                         Swal.fire({
                             title: "Applied!",
                             text: "Applied Successfully",
@@ -80,7 +103,7 @@ const DashboardContent = () => {
         <div>
             <div className="flex justify-evenly mb-8">
                 <h1 className="text-3xl">Applied Jobs {cart.length}</h1>
-                <h1 className="text-3xl">PAY {totalPriceInBDT}TK</h1>
+                <h1 className="text-3xl">PAY {totalPriceInBDT} TK</h1>
 
             </div>
             <div className="overflow-x-auto">
@@ -115,14 +138,14 @@ const DashboardContent = () => {
                                 <td>
                                     <div className="tooltip tooltip-error text-lg" data-tip="0.82 $">
                                         <button
-                                            onClick={() => !isApplied && handleApplyJob(jobItem._id)} // prevent firing if already applied
-                                            className={`btn btn-lg text-lg ${isApplied
-                                                    ? "text-green-600 border border-green-600 bg-transparent cursor-not-allowed"
-                                                    : "text-blue-500 hover:bg-blue-100"
+                                            onClick={() => handleApplyJob(jobItem._id, myCVInfo)}
+                                            className={`btn btn-lg text-lg ${appliedJobs.includes(jobItem._id) || isApplied
+                                                ? "text-green-600 border border-green-600 bg-transparent cursor-not-allowed"
+                                                : "text-blue-500 hover:bg-blue-100"
                                                 }`}
-                                            disabled={isApplied}
+                                            disabled={appliedJobsint.includes(jobItem._id) || isApplied} // ✅ dynamic disable
                                         >
-                                            {isApplied ? "Applied" : "Apply"}
+                                            {appliedJobsint.includes(jobItem._id) || isApplied ? "Applied" : "Apply"}
                                         </button>
                                     </div>
                                 </td>
