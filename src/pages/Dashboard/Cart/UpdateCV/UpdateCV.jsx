@@ -12,15 +12,16 @@ const UpdateCV = () => {
         const description = form.description.value;
         const age = form.age.value;
         const sector = form.sector.value;
+        const jobtitle = form.jobtitle.value;
         const phone = form.phone.value;
         const email = form.email.value;
         const jobtype = form.jobtype.value;
         const address = form.address.value;
         const price = 0.82
-        const cvItem = { name, description, age, sector, phone, jobtype, price,address,email }
+        const cvItem = { name, description, age, sector, phone, jobtype,jobtitle, price, address, email }
         // console.log(cvItem);
 
-        
+
         const jobCv = await axiosSecure.post('/allCV', cvItem);
         if (jobCv.data.insertedId) {
             Swal.fire({
@@ -59,7 +60,7 @@ const UpdateCV = () => {
                             </div>
                             {/* Row 1 */}
                             <div className="md:flex gap-4">
-                            <div className="form-control my-5 flex-1">
+                                <div className="form-control my-5 flex-1">
                                     <label className="label">
                                         <span className="label-text">Gender</span>
                                     </label>
@@ -82,9 +83,18 @@ const UpdateCV = () => {
                             <div className="md:flex gap-4">
                                 <div className="form-control my-5 flex-1">
                                     <label className="label">
-                                        <span className="label-text">Job Sector</span>
+                                        <span className="label-text">Job Type</span>
                                     </label>
-                                    <input type="text" name="sector" placeholder="sector" className="input input-bordered w-full" required />
+                                    <select defaultValue={'default'} name="sector" className="select select-info w-full">
+                                        <option disabled value='default'>Job Sector</option>
+                                        <option>data</option>
+                                        <option>design</option>
+                                        <option>marketing</option>
+                                        <option>security</option>
+                                        <option>technology</option>
+                                        <option>media</option>
+                                        <option>management</option>
+                                    </select>
                                 </div>
                                 <div className="form-control my-5 flex-1">
                                     <label className="label">
@@ -97,7 +107,7 @@ const UpdateCV = () => {
                                         <option>fulltime</option>
                                     </select>
                                 </div>
-                                
+
                             </div>
 
                             {/* Row 3 */}
@@ -118,7 +128,7 @@ const UpdateCV = () => {
 
                             {/* Row 4 */}
                             <div className="md:flex gap-4">
-                               
+
                                 <div className="form-control my-5 flex-1">
                                     <label className="label">
                                         <span className="label-text">Your Address</span>
@@ -126,7 +136,25 @@ const UpdateCV = () => {
                                     <input type="text" name="address" placeholder="address" className="input input-bordered w-full" required />
                                 </div>
                             </div>
+                            <div className="form-control my-5 flex-1">
+                                <label className="label">
+                                    <span className="label-text">Job Title</span>
+                                </label>
+                                <select defaultValue={'default'} name="jobtitle" className="select select-info w-full" required>
+                                    <option disabled value='default'>Job Title</option>
+                                    <option>Data Analyst</option>
+                                    <option>UX/UI Designer</option>
+                                    <option>Marketing Specialist</option>
+                                    <option>Cybersecurity Analyst</option>
+                                    <option>Web Developer</option>
+                                    <option>MERN Stack Developer</option>
+                                    <option>Photographer</option>
+                                    <option>Project Manager</option>
+                                    <option>Content Writer</option>
+                                    <option>Software Engineer</option>
 
+                                </select>
+                            </div>
                             {/* Experience */}
                             <div className="form-control my-5">
                                 <label className="label">

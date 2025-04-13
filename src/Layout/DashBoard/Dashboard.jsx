@@ -11,6 +11,7 @@ import { FaPeopleGroup } from "react-icons/fa6";
 import useAdmin from "../../hooks/useAdmin";
 import useAllJobsCategory from "../../hooks/useAllJobsCategory";
 import useMessage from "../../hooks/useMessage";
+import { BsListColumnsReverse } from "react-icons/bs";
 
 const Dashboard = () => {
     const [cart, refetch] = useCart()
@@ -40,7 +41,10 @@ const [message] = useMessage()
                    {
                     isAdmin ? <>
                      <li>
-                        <Link to={'/dashboard/adminhome'}> <FaHome />Admin Home</Link>
+                        <Link to={'/dashboard/cart'}> <FaHome />Admin Home</Link>
+                    </li>
+                    <li>
+                        <Link to={'/dashboard/jobrequest'}> <BsListColumnsReverse />Job Request</Link>
                     </li>
                     <li>
                         <Link to={'/dashboard/addjobs'}> <FaFile />Add Jobs</Link>

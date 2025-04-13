@@ -19,84 +19,89 @@ import Messages from "../pages/Dashboard/Cart/Messages/Messages";
 import MessageForm from "../pages/Dashboard/Cart/MessageForm/MessageForm";
 import ManageMessage from "../pages/Dashboard/Cart/Messages/ManageMessage";
 import AboutUs from "../pages/About Us/AboutUs";
+import JobRequest from "../pages/Dashboard/Cart/JobRequest/JobRequest";
 
 
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      children: [
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-          path: 'getsupport',
-          element:<GetSupport></GetSupport>,
-        },
-        {
-          path: 'alljobs',
-          element:<AllJobs></AllJobs>,
-        },
-        {
-          path: "login",
-          element: <Login></Login>
-        },
-        {
-          path: 'signUp',
-          element: <SignUp></SignUp>
-        },
-        {
-          path: "aboutus",
-          element: <AboutUs></AboutUs>
-        }
-        
-      ]
-    },
-    {
-      path: 'dashboard',
-      element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
-      children:[
-        {
-          path:'cart',
-          element: <DashboardContent></DashboardContent>
-        },
-        
-        {
-          path: 'updateCv',
-          element: <UpdateCV></UpdateCV>
-        },
-        {
-          path: 'message',
-          element:<Messages></Messages>
-        },
-        // admin routes
-        {
-          path: 'allusers',
-          element: <AdminRoutes><AllUsers></AllUsers></AdminRoutes>
-        },
-        {
-          path: 'addjobs',
-          element: <AdminRoutes><AddJobs></AddJobs></AdminRoutes>
-        },
-        {
-          path: 'managejobs',
-          element: <AdminRoutes><ManageJobs></ManageJobs></AdminRoutes>
-        },
-        {
-          path: 'updateJob/:id',
-          element: <AdminRoutes><UpdateJob></UpdateJob></AdminRoutes>,
-          loader: ({params})=> fetch(`http://localhost:5000/jobs/${params.id}`)
-        },
-        {
-          path:'messageform',
-          element: <MessageForm></MessageForm>
-        },
-        {
-          path: 'manageMessage',
-          element: <ManageMessage></ManageMessage>
-        }
-      ]
-    }
-  ]);
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: 'getsupport',
+        element: <GetSupport></GetSupport>,
+      },
+      {
+        path: 'alljobs',
+        element: <AllJobs></AllJobs>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>
+      },
+      {
+        path: 'signUp',
+        element: <SignUp></SignUp>
+      },
+      {
+        path: "aboutus",
+        element: <AboutUs></AboutUs>
+      }
+
+    ]
+  },
+  {
+    path: 'dashboard',
+    element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+    children: [
+      {
+        path: 'cart',
+        element: <DashboardContent></DashboardContent>
+      },
+
+      {
+        path: 'updateCv',
+        element: <UpdateCV></UpdateCV>
+      },
+      {
+        path: 'jobrequest',
+        element: <AdminRoutes><JobRequest></JobRequest></AdminRoutes>,
+      },
+      {
+        path: 'message',
+        element: <Messages></Messages>
+      },
+      // admin routes
+      {
+        path: 'allusers',
+        element: <AdminRoutes><AllUsers></AllUsers></AdminRoutes>
+      },
+      {
+        path: 'addjobs',
+        element: <AdminRoutes><AddJobs></AddJobs></AdminRoutes>
+      },
+      {
+        path: 'managejobs',
+        element: <AdminRoutes><ManageJobs></ManageJobs></AdminRoutes>
+      },
+      {
+        path: 'updateJob/:id',
+        element: <AdminRoutes><UpdateJob></UpdateJob></AdminRoutes>,
+        loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
+      },
+      {
+        path: 'messageform',
+        element: <MessageForm></MessageForm>
+      },
+      {
+        path: 'manageMessage',
+        element: <ManageMessage></ManageMessage>
+      }
+    ]
+  }
+]);

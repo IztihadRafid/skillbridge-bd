@@ -53,7 +53,7 @@ const DashboardContent = () => {
             confirmButtonText: "Apply!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosSecure.post(`/jobcarts/${id}`, { email: user?.email, myCVInfo })
+                axiosSecure.post(`/appliedjobs/${id}`, { email: user?.email, myCVInfo })
                     .then(res => {
                         refetch(); // refresh parent data
                         setAppliedJobs(prev => [...prev, id]);
