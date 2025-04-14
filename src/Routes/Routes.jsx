@@ -20,6 +20,7 @@ import MessageForm from "../pages/Dashboard/Cart/MessageForm/MessageForm";
 import ManageMessage from "../pages/Dashboard/Cart/Messages/ManageMessage";
 import AboutUs from "../pages/About Us/AboutUs";
 import JobRequest from "../pages/Dashboard/Cart/JobRequest/JobRequest";
+import AppliedJobs from "../pages/Dashboard/Cart/AppliedJobs";
 
 
 
@@ -69,9 +70,10 @@ export const router = createBrowserRouter([
         element: <UpdateCV></UpdateCV>
       },
       {
-        path: 'jobrequest',
-        element: <AdminRoutes><JobRequest></JobRequest></AdminRoutes>,
+        path: "appliedjobs",
+        element: <AppliedJobs></AppliedJobs>
       },
+      
       {
         path: 'message',
         element: <Messages></Messages>
@@ -80,6 +82,10 @@ export const router = createBrowserRouter([
       {
         path: 'allusers',
         element: <AdminRoutes><AllUsers></AllUsers></AdminRoutes>
+      },
+      {
+        path: 'jobrequest',
+        element: <AdminRoutes><JobRequest></JobRequest></AdminRoutes>,
       },
       {
         path: 'addjobs',

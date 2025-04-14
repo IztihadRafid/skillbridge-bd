@@ -22,7 +22,7 @@ const JobRequest = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axiosSecure.delete(`/appliedjobs/${id}`)
+                axiosSecure.delete(`/hiredjob/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             refetch()
@@ -45,7 +45,7 @@ const JobRequest = () => {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Reject"
+            confirmButtonText: "Hire!"
         }).then((result) => {
             if (result.isConfirmed) {
 
